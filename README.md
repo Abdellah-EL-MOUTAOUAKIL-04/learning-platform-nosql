@@ -101,6 +101,14 @@ Les données sensibles (comme l'URI MongoDB) sont gérées via un fichier `.env`
 - **Question :** Comment gérer proprement la fermeture des connexions ?
 - **Réponse :** Pour gérer proprement la fermeture des connexions, il est essentiel de fermer la connexion à la base de données lors de l'arrêt de l'application.
 
+#### `env.js`
+
+- **Question :** Pourquoi est-il important de valider les variables d'environnement au démarrage ?
+- **Réponse :** Valider les variables d'environnement au démarrage permet de s'assurer que l'application a toutes les informations nécessaires pour fonctionner correctement et éviter les erreurs en production.
+
+- **Question :** Que se passe-t-il si une variable requise est manquante ?
+- **Réponse :** Si une variable requise est manquante, l'application risque de ne pas fonctionner correctement, entraînant des erreurs ou des comportements imprévus. Cela peut aussi causer des échecs de connexion à des services externes ou des problèmes de configuration.
+
 ---
 
 ## Auteur

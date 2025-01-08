@@ -48,6 +48,15 @@ function getdb() {
     return db;
   }
 }
+//fermer les connections
+async function closeMongo() {
+  await mongoClient.close();
+  console.log("MongoDB connection closed");
+}
+async function closeRedis() {
+  await redisClient.quit();
+  console.log("Redis connection closed");
+}
 
 // Export des fonctions et clients
 module.exports = {
@@ -55,4 +64,6 @@ module.exports = {
   connectMongo,
   connectRedis,
   getdb,
+  closeMongo,
+  closeRedis,
 };

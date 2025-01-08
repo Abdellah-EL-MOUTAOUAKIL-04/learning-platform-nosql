@@ -22,7 +22,8 @@ async function startServer() {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     // TODO: Monter les routes
-    app.use("/api", courseRoutes);
+    app.use("/api/course", courseRoutes);
+    app.use("/api/student", studentRoutes);
     // TODO: Démarrer le serveur
     app.listen(config.port, () => {
       console.log(`Server started on port ${config.port}`);

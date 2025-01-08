@@ -109,6 +109,14 @@ Les données sensibles (comme l'URI MongoDB) sont gérées via un fichier `.env`
 - **Question :** Que se passe-t-il si une variable requise est manquante ?
 - **Réponse :** Si une variable requise est manquante, l'application risque de ne pas fonctionner correctement, entraînant des erreurs ou des comportements imprévus. Cela peut aussi causer des échecs de connexion à des services externes ou des problèmes de configuration.
 
+#### `courseController.js`
+
+- **Question :** Quelle est la différence entre un contrôleur et une route ?
+- **Réponse :** Une route définit l'URL et la méthode HTTP pour une requête, tandis qu'un contrôleur contient la logique qui gère cette requête.
+
+- **Question :** Pourquoi séparer la logique métier des routes ?
+- **Réponse :** Séparer la logique métier des routes permet d'améliorer la lisibilité, la maintenabilité et la testabilité du code, en isolant la gestion des requêtes de la logique spécifique à l'application.
+
 ---
 
 ## Auteur

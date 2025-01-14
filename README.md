@@ -26,6 +26,7 @@ Ce projet est une API backend pour une plateforme d'apprentissage en ligne, util
 
    ```bash
    npm install
+   npm i -g nodemon
    ```
 
 3. Configurez les variables d'environnement :
@@ -116,6 +117,14 @@ Les données sensibles (comme l'URI MongoDB) sont gérées via un fichier `.env`
 
 - **Question :** Pourquoi séparer la logique métier des routes ?
 - **Réponse :** Séparer la logique métier des routes permet d'améliorer la lisibilité, la maintenabilité et la testabilité du code, en isolant la gestion des requêtes de la logique spécifique à l'application.
+
+#### `redisService.js`
+
+- **Question :** Comment gérer efficacement le cache avec Redis ?
+- **Réponse :** Gérez le cache en utilisant des stratégies d'expiration (TTL) pour éviter une surcharge mémoire, en utilisant des clés structurées pour une meilleure organisation, et en utilisant un mécanisme de cache invalideur pour garantir des données à jour.
+
+- **Question :** Quelles sont les bonnes pratiques pour les clés Redis ?
+- **Réponse :** Utilisez un format cohérent pour nommer les clés , évitez les clés trop longues, et incluez des noms descriptifs pour faciliter la compréhension et le débogage.
 
 ---
 

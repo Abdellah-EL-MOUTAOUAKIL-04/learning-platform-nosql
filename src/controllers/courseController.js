@@ -43,7 +43,7 @@ async function getCourse(req, res) {
 }
 
 async function getCourseStats(req, res) {
-  res.send("enrolled by 18");
+  //res.send("enrolled by 18");
 }
 
 // Export des contrôleurs

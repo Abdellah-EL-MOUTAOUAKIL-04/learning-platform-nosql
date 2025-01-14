@@ -28,7 +28,7 @@ async function connectMongo() {
 async function connectRedis() {
   // TODO: Implémenter la connexion Redis
   // Gérer les erreurs et les retries
-  redisClient = redis.createClient();
+  let redisClient = redis.createClient();
   try {
     await redisClient.connect({
       host: config.redis,

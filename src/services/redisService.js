@@ -6,10 +6,12 @@
 // Réponse : Utilisez un format cohérent pour nommer les clés , évitez les clés trop longues,
 // et incluez des noms descriptifs pour faciliter la compréhension et le débogage.
 
+const { connectRedis } = require("../config/db");
+
 // Fonctions utilitaires pour Redis
 async function cacheData(key, data, ttl) {
   // TODO: Implémenter une fonction générique de cache
-  const redisClient = await redisdb.connectRedis();
+  const redisClient = await connectRedis();
   try {
     await redisClient.set(key, JSON.stringify(data), { EX: ttl });
   } catch (error) {
@@ -19,7 +21,7 @@ async function cacheData(key, data, ttl) {
 
 async function getCachedData(key) {
   // get cash data implemenatation
-  const redisClient = await redisdb.connectRedis();
+  const redisClient = await connectRedis();
   try {
     const data = await redisClient.get(key);
     if (data) {

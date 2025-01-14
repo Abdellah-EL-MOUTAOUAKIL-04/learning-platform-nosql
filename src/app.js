@@ -37,6 +37,16 @@ async function startServer() {
 // Gestion propre de l'arrêt
 process.on("SIGTERM", async () => {
   // TODO: Implémenter la fermeture propre des connexions
+  console.log("Arret des service ...");
+  try {
+    await db.closeMongo(); // Fermer la connexion MongoDB
+    await db.closeRedis(); // Fermer la connexion Redis
+    console.log("Tous les services son etteint.");
+    process.exit(0);
+  } catch (error) {
+    console.error("Erreur lors de l'arret:", error);
+    process.exit(1);
+  }
 });
 
 startServer();

@@ -1,5 +1,7 @@
 # Projet de fin de module NoSQL
 
+## Projet terminé
+
 ## Introduction
 
 Ce projet est une API backend pour une plateforme d'apprentissage en ligne, utilisant une base de données NoSQL. L'objectif est de fournir une structure claire, modulaire et sécurisée tout en respectant les bonnes pratiques de développement.

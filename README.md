@@ -149,6 +149,70 @@ Les données sensibles (comme l'URI MongoDB) sont gérées via un fichier `.env`
 
 ---
 
+## Illustrations
+
+Voici quelques captures d'écran pour illustrer le fonctionnement de l'application.
+
+### 1. **Création de la base de données et des collections**
+
+![Création de BD et Collection](screenshots/Creation%20de%20BD%20et%20Collection.png)
+_Cette image montre la création de la base de données et des collections dans MongoDB pour le projet._
+
+### 2. **Vérification de Redis**
+
+![La vérification de redis](screenshots/La%20verification%20de%20redis.png)
+_Ici, on peut voir l'écran de vérification de bon fonctionnement de cahe avec redis._
+
+### 3. **Création d'un cours**
+
+![La création d'un cours](screenshots/La%20creation%20d'un%20cours.png)
+_Ici, on voit le formulaire de création d'un cours dans l'application._
+
+### 4. **Recherche d'un cours avec l'ID**
+
+![La recherche d'un cours avec l'id](screenshots/La%20recherche%20d'un%20cours%20avec%20l'id.png)
+_Cette capture d'écran montre la fonctionnalité de recherche d'un cours en utilisant son ID._
+
+### 5. **Récupération des statistiques**
+
+![La récupération des statistiques](screenshots/La%20recupuration%20des%20statistiques.png)
+_Cette image présente la vue des statistiques récupérées de l'application._
+
+---
+
+## Choix Techniques
+
+### Variables d'environnement
+
+Les données sensibles (ex. URI MongoDB) sont stockées dans un fichier `.env`, ce qui garantit la sécurité et la portabilité de l'application entre différents environnements (développement, production).
+
+### Gestion des Bases de Données
+
+- **MongoDB** : Base de données NoSQL principale pour stocker les cours et utilisateurs.
+- **Redis** : Utilisé comme cache pour améliorer la performance des requêtes fréquentes.
+
+### Séparation de la Logique Métier et des Routes
+
+Le projet suit une architecture modulaire :
+
+- **Routes** : Définissent les points d'entrée.
+- **Contrôleurs** : Gèrent la logique métier.
+- **Services** : Gèrent la communication avec la base de données.
+
+### Utilisation de Nodemon pour le Développement
+
+Nodemon est utilisé pour redémarrer automatiquement le serveur lors de modifications du code, facilitant le développement.
+
+### Test avec Postman
+
+Les routes API sont testées via Postman pour s'assurer de leur bon fonctionnement.
+
+### Gestion des Erreurs
+
+Les erreurs sont centralisées et renvoyées sous un format standardisé avec un message d'erreur et un code HTTP approprié, facilitant la gestion des exceptions.
+
+---
+
 ## Auteur
 
 ## EL MOUTAOUAKIL Abdellah BDCC

@@ -1,3 +1,8 @@
 # Compléter ici !!!!???
 
+
+# Ignorer les dépendances
 node_modules
+
+# Ignorer les fichiers d'environnement sensibles
+.env

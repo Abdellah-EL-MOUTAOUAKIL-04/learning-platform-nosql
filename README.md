@@ -118,6 +118,11 @@ Les données sensibles (comme l'URI MongoDB) sont gérées via un fichier `.env`
 - **Question :** Pourquoi séparer la logique métier des routes ?
 - **Réponse :** Séparer la logique métier des routes permet d'améliorer la lisibilité, la maintenabilité et la testabilité du code, en isolant la gestion des requêtes de la logique spécifique à l'application.
 
+#### `mongoService.js`
+
+- **Question :** Pourquoi créer des services séparés ?
+- **Réponse :**Créer des services séparés permet d'encapsuler des fonctionnalités spécifiques,de réutiliser le code et d'améliorer la testabilité, tout en rendant l'application plus modulaire et facile à maintenir.
+
 #### `redisService.js`
 
 - **Question :** Comment gérer efficacement le cache avec Redis ?
@@ -125,6 +130,22 @@ Les données sensibles (comme l'URI MongoDB) sont gérées via un fichier `.env`
 
 - **Question :** Quelles sont les bonnes pratiques pour les clés Redis ?
 - **Réponse :** Utilisez un format cohérent pour nommer les clés , évitez les clés trop longues, et incluez des noms descriptifs pour faciliter la compréhension et le débogage.
+
+#### `courseRoutes.js`
+
+- **Question :** Pourquoi séparer les routes dans différents fichiers ?
+- **Réponse :** Pour améliorer la lisibilité, la maintenabilité et l'organisation du code en regroupant les routes par fonctionnalité ou module.
+
+- **Question :** Comment organiser les routes de manière cohérente ?
+- **Réponse :** Utilisez des fichiers distincts pour chaque module, définissez des préfixes d'URL clairs, et suivez une structure logique pour regrouper les routes similaires.
+
+#### `env`
+
+- **Question :** Quelles sont les informations sensibles à ne jamais commiter ?
+- **Réponse :** Les informations sensibles incluent les clés API, les mots de passe, les URI de base de données,les jetons d accès, les secrets de configuration et toute donnée confidentielle.
+
+- **Question :** Pourquoi utiliser des variables d'environnement ?
+- **Réponse :** Les variables d'environnement permettent de stocker les informations sensibles et les configurations en dehors du code source, offrant ainsi une meilleure sécurité, flexibilité et portabilité de l'application.
 
 ---
 

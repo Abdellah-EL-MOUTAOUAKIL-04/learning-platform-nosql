@@ -43,7 +43,14 @@ async function getCourse(req, res) {
 }
 
 async function getCourseStats(req, res) {
-  //res.send("enrolled by 18");
+  try {
+    const collection = db.getdb().collection("course");
+    const stats = await mongoService.getStats(collection);
+    res.send(stats);
+  } catch (err) {
+    console.log("Erreur lors de la recupuration des stats ", err);
+    res.status(500).send("Erreur serveur");
+  }
 }
 
 // Export des contrôleurs

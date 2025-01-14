@@ -3,6 +3,7 @@
 //  de réutiliser le code et d'améliorer la testabilité, tout en rendant l'application plus modulaire et facile à maintenir.
 
 const { ObjectId } = require("mongodb");
+const { getdb } = require("../config/db");
 
 // Fonctions utilitaires pour MongoDB
 async function findOneById(collection, id) {
@@ -28,9 +29,42 @@ async function insertOne(collection, document) {
   }
 }
 
+async function getStats(collection) {
+  try {
+    //Pour obtenir les statistiques d'une collection
+    /*const stats = await getdb().command({
+      collStats: collection.collectionName,
+    });
+    return stats;
+    */
+    const totalCourses = await collection.countDocuments();
+    const recentCourse = await collection
+      .find()
+      .sort({ createdAt: -1 })
+      .limit(1)
+      .toArray();
+    const averageDuration = await collection
+      .aggregate([
+        { $group: { _id: null, avgDuration: { $avg: "$duration" } } },
+      ])
+      .toArray();
+
+    return {
+      totalCourses,
+      recentCourse: recentCourse.length > 0 ? recentCourse[0] : null,
+      averageDuration:
+        averageDuration.length > 0 ? averageDuration[0].avgDuration : 0,
+    };
+  } catch (err) {
+    console.log("Erreur lors de la recupuration des stats ", err);
+    throw new Error("Erreur lors de la recupuration des stats");
+  }
+}
+
 // Export des services
 module.exports = {
   // TODO: Exporter les fonctions utilitaires
   findOneById,
   insertOne,
+  getStats,
 };
